@@ -1,6 +1,6 @@
 import { $menuIsOpen } from '@/context/modals'
 import { useLang } from '@/hooks/useLang'
-import { useUnit } from '@/node_modules/effector-react/index'
+import { useUnit } from 'effector-react'
 import { useState } from 'react'
 
 const Menu = () => {

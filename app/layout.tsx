@@ -1,7 +1,7 @@
 import Layout from '@/components/layouts/Layout'
 import type { Metadata } from 'next'
 
-import './globalStyles/global.css'
+import './globalStyles/globals.css'
 import './globalStyles/normalize.css'
 
 

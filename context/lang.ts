@@ -1,7 +1,7 @@
 'use client'
 
 import { AllowLangs } from '@/constants/lang'
-import { createDomain } from '@/node_modules/effector/index'
+import { createDomain } from 'effector'
 
 const lang = createDomain()
 
