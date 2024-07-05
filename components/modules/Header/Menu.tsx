@@ -1,3 +1,4 @@
+import Logo from '@/components/elements/Logo/Logo'
 import { AllowLangs } from '@/constants/lang'
 import { setLang } from '@/context/lang'
 import { $menuIsOpen, closeMenu } from '@/context/modals'
@@ -28,11 +29,43 @@ const Menu = () => {
 
   return (
     <nav className={`nav-menu ${menuIsOpen ? 'open' : 'close'}`}>
-      <button
-        className={`btn-reset nav-menu__close ${menuIsOpen ? 'open' : ''}`}
-        onClick={handleCloseMenu}
-      />
-      <h1>Menu</h1>
+      <div className='container nav-menu__container'>
+        <div className={`nav-menu__logo ${menuIsOpen ? 'open' : ''}`}>
+          <Logo />
+        </div>
+        <img
+          className={`nav-menu__bg ${menuIsOpen ? 'open' : ''}`}
+          src='/img/menu-bg.png'
+          alt='menu background'
+        />
+        <button
+          className={`btn-reset nav-menu__close ${menuIsOpen ? 'open' : ''}`}
+          onClick={handleCloseMenu}
+        />
+        <div className={`nav-menu__lang ${menuIsOpen ? 'open' : ''}`}>
+          <button
+            className={`btn-reset nav-menu__lang__btn ${
+              lang === 'ru' ? 'lang-active' : ''
+            }`}
+            onClick={handleSwitchLangToRu}
+          >
+            RU
+          </button>
+          <button
+            className={`btn-reset nav-menu__lang__btn ${
+              lang === 'en' ? 'lang-active' : ''
+            }`}
+            onClick={handleSwitchLangToEn}
+          >
+            EN
+          </button>
+          <ul className={`list-reset nav-menu__list ${menuIsOpen ? 'open' : ''}`}>
+            <li className='nav-menu__list__item'></li>
+            <li className='nav-menu__list__item'></li>
+            <li className='nav-menu__list__item'></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   )
 }

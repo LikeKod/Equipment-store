@@ -2,11 +2,57 @@
     "en": {
         "header": {
             "menu_btn": "Menu"
+        },
+        "main_menu": {
+            "catalog": "Catalog",
+            "buyers": "For buyers",
+            "contacts": "Contacts",
+            "cloth": "Cloth",
+            "accessories": "Accessories",
+            "souvenirs": "Souvenirs",
+            "office": "Office",
+            "all": "All catalog",
+            "about": "About",
+            "blog": "Blog",
+            "shipping": "Shipping and payment",
+            "returns": "Purchase returns",
+            "tg": "Telegram",
+            "vk": "VKontakte"
         }
     },
     "ru": {
         "header": {
             "menu_btn": "Меню"
+        },
+        "main_menu": {
+            "catalog": "Каталог",
+            "buyers": "Покупателям",
+            "contacts": "Контакты",
+            "cloth": "Одежда",
+            "accessories": "Аксессуары",
+            "souvenirs": "Сувениры",
+            "office": "Канцелярия",
+            "all": "Весь каталог",
+            "about": "О нас",
+            "blog": "Блог",
+            "shipping": "Доставка и оплата",
+            "returns": "Возврат товара",
+            "tg": "Телеграм",
+            "vk": "ВКонтакте"
+        },
+        "comparison": {
+            "umbrella": "Зонты",
+            "bags": "Сумки",
+            "outewear": "Верхняя одежда",
+            "long-sleeves": "Донг-сливы",
+            "headdress": "Головные уборы",
+            "hoodie": "Худи",
+            "business-souvenirs": "Бизнес-сувениры" ,
+            "promotional-souvenirs": "Промо-сувениры",
+            "pen": "Ручки",
+            "notebook": "Тетрадки",
+            "t-shirts": "Футболки",
+            "main_heading": "Сравнение"
         }
     }
 }
