@@ -3,12 +3,15 @@ import { AllowLangs } from '@/constants/lang'
 import { setLang } from '@/context/lang'
 import { $menuIsOpen, closeMenu } from '@/context/modals'
 import { useLang } from '@/hooks/useLang'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { removeOverflowHiddenFromBody } from '@/lib/utils/common'
 import { usePathname } from '@/node_modules/next/navigation'
 import { useUnit } from 'effector-react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import Accordion from '../Accordion/Accordion'
+import BuyersListItems from './BayersListItems'
+import ContactsListItems from './ContactsListItems'
 import MenuLinkItem from './MenuLinkItem'
 
 const Menu = () => {
@@ -136,7 +139,7 @@ const Menu = () => {
         </div>
         <img
           className={`nav-menu__bg ${menuIsOpen ? 'open' : ''}`}
-          src='/img/menu-bg.png'
+          src={`/img/menu-bg${isMedia800 ? '-small' : ''}.png`}
           alt='menu background'
         />
         <button
