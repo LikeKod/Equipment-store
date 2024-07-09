@@ -1,9 +1,11 @@
 import Layout from '@/components/layouts/Layout'
 import type { Metadata } from 'next'
 
+import './globalStyles/catalog-menu.css'
 import './globalStyles/globals.css'
 import './globalStyles/header.css'
 import './globalStyles/menu.css'
+import './globalStyles/mobile-navbar.css'
 import './globalStyles/normalize.css'
 
 export const metadata: Metadata = {
