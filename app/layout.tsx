@@ -6,6 +6,7 @@ import './globalStyles/globals.css'
 import './globalStyles/header.css'
 import './globalStyles/menu.css'
 import './globalStyles/mobile-navbar.css'
+import './globalStyles/search-modal.css'
 import './globalStyles/normalize.css'
 
 export const metadata: Metadata = {
