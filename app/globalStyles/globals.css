@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Rostelecom Basis;
   font-weight: 400;
@@ -40,10 +44,10 @@ body {
   z-index: -1;
 }
 
-.share-overlay.overlay-active {
+.header__search-overlay.overlay-active {
   opacity: 0.6;
   visibility: visible;
-  z-index: 2;
+  z-index: 101;
 }
 
 @font-face {

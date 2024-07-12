@@ -1,15 +1,13 @@
 'use client'
 import Logo from '@/components/elements/Logo/Logo'
-import { $searchModal, openMenu, openSearchModal } from '@/context/modals'
+import { openMenu, openSearchModal } from '@/context/modals'
 import { useLang } from '@/hooks/useLang'
 import { addOverflowHiddenToBody, handleCloseSearchModal } from '@/lib/utils/common'
 import Link from 'next/link'
 import Menu from './Menu'
-import { useUnit } from 'effector-react'
 
 const Header = () => {
   const { lang, translation } = useLang()
-  const searchModal = useUnit($searchModal)
 
   const handleOpenMenu = () => {
     addOverflowHiddenToBody()
@@ -23,7 +21,7 @@ const Header = () => {
 
   return (
     <header className='header'>
-      <div className={`header__search-overlay ${searchModal ? 'overlay-active' : ''}`} onClick={handleCloseSearchModal} />
+      
       <div className='container header__container'>
         <button onClick={handleOpenMenu} className='btn-reset header__burger'>
           {translation[lang].header.menu_btn}
