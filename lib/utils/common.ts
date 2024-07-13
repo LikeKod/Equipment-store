@@ -22,3 +22,7 @@ export const handleCloseSearchModal = () => {
   closeSearchModal()
   removeOverflowHiddenFromBody()
 }
+
+
+export const formatPrice = (x: number) =>
+  x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
