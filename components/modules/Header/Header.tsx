@@ -2,8 +2,9 @@
 import Logo from '@/components/elements/Logo/Logo'
 import { openMenu, openSearchModal } from '@/context/modals'
 import { useLang } from '@/hooks/useLang'
-import { addOverflowHiddenToBody, handleCloseSearchModal } from '@/lib/utils/common'
+import { addOverflowHiddenToBody } from '@/lib/utils/common'
 import Link from 'next/link'
+import CartPopup from './CartPopup/CartPopup'
 import Menu from './Menu'
 
 const Header = () => {
@@ -53,10 +54,7 @@ const Header = () => {
             />
           </li>
           <li className='header__links__item'>
-            <Link
-              href='/profile'
-              className='header__links__item__btn header__links__item__btn--profile '
-            />
+            <CartPopup />
           </li>
         </ul>
       </div>
