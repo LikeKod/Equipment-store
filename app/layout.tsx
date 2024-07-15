@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 
 import './globalStyles/cart-popup.css'
 import './globalStyles/catalog-menu.css'
+import './globalStyles/footer.css'
 import './globalStyles/globals.css'
 import './globalStyles/header.css'
 import './globalStyles/menu.css'
