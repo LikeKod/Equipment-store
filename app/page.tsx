@@ -1,9 +1,5 @@
-import styles from "./globalStyles/normalize.css";
+import MainPage from "@/components/templates/MainPage/MainPage";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <h1>Start</h1>
-    </main>
-  );
+  return <MainPage />
 }
