@@ -7,8 +7,10 @@ import img3 from '@/public/img/violet-t.png'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import { EffectCoverflow } from 'swiper/modules'
+import { Swiper as SwiperType } from 'swiper/types'
 import styles from '../../../../styles/main-page/index.module.scss'
 import HeroSlide from './HeroSlide'
+
 
 const Hero = () => {
   const { lang, translation } = useLang()
@@ -31,6 +33,8 @@ const Hero = () => {
       image: img3,
     },
   ]
+
+  const handleSlideClick = (e: SwiperType) => e.slideTo(e.clickedIndex)
 
   return (
     <section className={styles.hero}>
