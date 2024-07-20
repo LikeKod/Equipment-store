@@ -32,6 +32,20 @@ body {
   list-style-type: none;
 }
 
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.duration {
+  transition-duration: 2s;
+}
+
 .site-title {
   margin: 0;
   margin-bottom: 40px;
