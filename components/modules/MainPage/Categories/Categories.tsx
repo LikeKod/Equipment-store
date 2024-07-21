@@ -11,6 +11,7 @@ import img2 from '@/public/img/categories-img-2.png'
 import img3 from '@/public/img/categories-img-3.png'
 import img4 from '@/public/img/categories-img-4.png'
 import styles from '../../../../styles/main-page/index.module.css'
+import MainSlider from '../MainSlider'
 
 const Categories = () => {
   const { lang, translation } = useLang()
@@ -51,6 +52,7 @@ const Categories = () => {
                   src={img1}
                   alt='Cloth'
                   className='transition-opacity opacity-0 duration'
+                  onLoad={handleLoadingImageComplete}
                 />
                 <span>{translation[lang].main_page.category_cloth}</span>
               </Link>
@@ -64,6 +66,7 @@ const Categories = () => {
                       src={img2}
                       alt='Accessories'
                       className='transition-opacity opacity-0 duration'
+                      onLoad={handleLoadingImageComplete}
                     />
                     <span>
                       {translation[lang].main_page.category_accessories}
@@ -77,6 +80,7 @@ const Categories = () => {
                       src={img3}
                       alt='Souvenirs'
                       className='transition-opacity opacity-0 duration'
+                      onLoad={handleLoadingImageComplete}
                     />
                     <span>
                       {translation[lang].main_page.category_souvenirs}
@@ -91,6 +95,7 @@ const Categories = () => {
                     src={img4}
                     alt='Office'
                     className='transition-opacity opacity-0 duration'
+                    onLoad={handleLoadingImageComplete}
                   />
                   <span>{translation[lang].main_page.category_office}</span>
                 </Link>
