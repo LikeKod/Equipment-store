@@ -1,4 +1,4 @@
-import { closeSearchModal } from "@/context/modals"
+import { closeSearchModal } from '@/context/modals'
 
 export const removeOverflowHiddenFromBody = () => {
   const body = document.querySelector('body') as HTMLBodyElement
@@ -23,6 +23,21 @@ export const handleCloseSearchModal = () => {
   removeOverflowHiddenFromBody()
 }
 
-
 export const formatPrice = (x: number) =>
   x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+
+export const shuffle = <T>(array: T[]) => {
+  let currentIndex = array.length,
+    randomIndex
+
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex--
+    ;[array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ]
+  }
+
+  return array
+}
