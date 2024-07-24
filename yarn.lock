@@ -775,7 +775,7 @@ effector-react@^23.2.1:
 
 effector@^23.2.2:
   version "23.2.2"
-  resolved "https://registry.npmjs.org/effector/-/effector-23.2.2.tgz"
+  resolved "https://registry.yarnpkg.com/effector/-/effector-23.2.2.tgz#9935770c1e315037f08b820720b82cf3cc25cafc"
   integrity sha512-gzwATi9pgZQx0TNhM2LESmoUpEO+vhibLZPCvVzi7spMvKFwKnfJV2PFj4xqNFFSC35TXaznx30ne62dCQ6ZRQ==
 
 emoji-regex@^8.0.0:

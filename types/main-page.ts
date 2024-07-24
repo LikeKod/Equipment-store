@@ -8,3 +8,7 @@ export interface IHeroSlide {
 }
 
 export type IHeroSlideTooltip = IHeroSlide
+
+export interface IMainSectionProps {
+    
+}
