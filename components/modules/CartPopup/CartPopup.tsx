@@ -1,9 +1,9 @@
-import Link from 'next/link'
-import { AnimatePresence, motion } from 'framer-motion'
-import { forwardRef } from 'react'
 import { withClickOutside } from '@/components/hocs/withClickOutside'
 import { useLang } from '@/hooks/useLang'
 import { IWrapperComponentProps } from '@/types/hocs'
+import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
+import { forwardRef } from 'react'
 
 const CartPopup = forwardRef<HTMLDivElement, IWrapperComponentProps>(
   ({ open, setOpen }, ref) => {

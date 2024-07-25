@@ -1,6 +1,9 @@
 import AllLink from '@/components/elements/AllLinks/AllLink'
+import { basePropsForMotion } from '@/constants/motion'
 import styles from '@/styles/main-page/index.module.scss'
 import skeletonStyles from '@/styles/skeleton/index.module.scss'
+import { IMainPageSectionProps } from '@/types/main-page'
+import { motion } from 'framer-motion'
 
 const MainPageSection = ({ title, goods, spinner }: IMainPageSectionProps) => (
   <section className={styles.main_section}>

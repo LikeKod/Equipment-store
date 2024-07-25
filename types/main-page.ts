@@ -1,4 +1,5 @@
 import { StaticImageData } from "@/node_modules/next/image"
+import { IProduct } from "./common"
 
 
 export interface IHeroSlide {
@@ -9,6 +10,8 @@ export interface IHeroSlide {
 
 export type IHeroSlideTooltip = IHeroSlide
 
-export interface IMainSectionProps {
-    
+export interface IMainPageSectionProps {
+    title: string
+    goods: IProduct[]
+    spinner: boolean
 }

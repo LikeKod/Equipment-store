@@ -1,4 +1,5 @@
 'use client'
+import ProductSubtitle from '@/components/elements/ProductSubtitle/ProductSubtitle'
 import { useLang } from '@/hooks/useLang'
 import { Swiper, SwiperSlide } from '@/node_modules/swiper/swiper'
 import img1 from '@/public/img/black-t.png'
@@ -8,13 +9,13 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import { EffectCoverflow } from 'swiper/modules'
 import { Swiper as SwiperType } from 'swiper/types'
+import stylesForAd from '../../../../styles/ad/index.module.scss'
 import styles from '../../../../styles/main-page/index.module.scss'
 import HeroSlide from './HeroSlide'
 
 
 const Hero = () => {
   const { lang, translation } = useLang()
-  const descriptionSlicePosition = lang === 'ru' ? 5 : 2
 
   const slides = [
     {
@@ -42,7 +43,7 @@ const Hero = () => {
         {translation[lang].main_page.hero_hidden_title}
       </h1>
       <div className={`container ${styles.hero__container}`}>
-        <span className={styles.ad}>{translation[lang].common.ad}</span>
+        <span className={stylesForAd.ad}>{translation[lang].common.ad}</span>
         <Swiper
           className={styles.hero__slider}
           effect='coverflow'
@@ -67,22 +68,7 @@ const Hero = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className={styles.hero__subtitle}>
-          <div className={styles.hero__subtitle__rect}>
-            <span>
-              {translation[lang].main_page.hero_description.slice(
-                0,
-                descriptionSlicePosition
-              )}
-            </span>
-            <br />
-            <span>
-              {translation[lang].main_page.hero_description.slice(
-                descriptionSlicePosition
-              )}
-            </span>
-          </div>
-        </div>
+        <ProductSubtitle />
         <h2 className={styles.hero__title}>
           <span
             className={`${styles.hero__title__subtitle} ${
