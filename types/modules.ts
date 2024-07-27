@@ -27,3 +27,8 @@ export interface IProductListItemProps {
   item: IProduct
   title?: string
 }
+
+export interface IProductLabelProps {
+  isNew: boolean
+  isBestseller: boolean
+}
