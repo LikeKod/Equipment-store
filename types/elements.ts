@@ -11,3 +11,8 @@ export interface IProductItemActionBtnProps {
   withTooltip?: boolean
   marginBottom?: number
 }
+
+export interface IProductAvailableProps {
+  vendorCode: string
+  inStock: number
+}

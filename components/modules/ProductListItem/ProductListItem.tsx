@@ -1,3 +1,5 @@
+import ProductAvailable from '@/components/elements/ProductAvaliable/ProductAvaliable'
+import ProductItemActionBtn from '@/components/elements/ProductItemActionBtn/ProductItemActionBtn'
 import ProductSubtitle from '@/components/elements/ProductSubtitle/ProductSubtitle'
 import { useLang } from '@/hooks/useLang'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
@@ -69,9 +71,88 @@ const ProductListItem = ({ item, title }: IProductListItemProps) => {
             ''
           ) : (
             <ProductLabel isBestseller={item.isBestseller} isNew={item.isNew} />
+          )}<div className={styles.list__item__actions}>
+          <ProductItemActionBtn
+            spinner={addToFavoritesSpinner}
+            text={translation[lang].product.add_to_favorites}
+            iconClass={`${
+              addToFavoritesSpinner
+                ? 'actions__btn_spinner'
+                : isProductInFavorites
+                  ? 'actions__btn_favorite_checked'
+                  : 'actions__btn_favorite'
+            }`}
+            callback={handleAddProductToFavorites}
+          />
+          <ProductItemActionBtn
+            spinner={addToComparisonSpinner}
+            text={translation[lang].product.add_to_comparison}
+            iconClass={`${
+              addToComparisonSpinner
+                ? 'actions__btn_spinner'
+                : isProductInComparison
+                  ? 'actions__btn_comparison_checked'
+                  : 'actions__btn_comparison'
+            }`}
+            callback={handleAddToComparison}
+          />
+          {!isMedia800 && (
+            <ProductItemActionBtn
+              text={translation[lang].product.quick_view}
+              iconClass='actions__btn_quick_view'
+              callback={handleShowQuickViewModal}
+            />
           )}
+        </div>
+        <Link
+          href={`/catalog/${item.category}/${item._id}`}
+          className={styles.list__item__img}
+        >
+          <Image src={item.images[0]} alt={item.name} fill />
+        </Link>
+        <div className={styles.list__item__inner}>
+          <h3 className={styles.list__item__title}>
+            <Link href={`/catalog/${item.category}/${item._id}`}>
+              {item.name}
+            </Link>
+          </h3>
+          <ProductAvailable
+            vendorCode={item.vendorCode}
+            inStock={+item.inStock}
+          />
+          <span className={styles.list__item__price}>
+            {formatPrice(+item.price)} ₽
+          </span>
+        </div>
+        {productsWithoutSizes.includes(item.type) ? (
+          <button
+            onClick={addToCart}
+            className={`btn-reset ${styles.list__item__cart} ${
+              isProductInCart ? styles.list__item__cart_added : ''
+            }`}
+            disabled={addToCartSpinner}
+            style={addToCartSpinner ? { minWidth: 125, height: 48 } : {}}
+          >
+            {addToCartSpinner ? (
+              <FontAwesomeIcon icon={faSpinner} spin color='#fff' />
+            ) : isProductInCart ? (
+              translation[lang].product.in_cart
+            ) : (
+              translation[lang].product.to_cart
+            )}
+          </button>
+        ) : (
+          <button
+            className={`btn-reset ${styles.list__item__cart}`}
+            onClick={addToCart}
+          >
+            {translation[lang].product.to_cart}
+          </button>
+        )}
         </li>
       )}
     </>
   )
 }
+
+export default ProductListItem

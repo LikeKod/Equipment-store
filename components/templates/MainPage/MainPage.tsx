@@ -3,17 +3,18 @@
 import BestsellerGoods from '@/components/modules/MainPage/BestsellerGoods'
 import Categories from '@/components/modules/MainPage/Categories/Categories'
 import Hero from '@/components/modules/MainPage/Hero/Hero'
+import NewGoods from '@/components/modules/MainPage/NewGoods'
 import { MainPageGate } from '@/context/goods'
 import { useGate } from '@/node_modules/effector-react/index'
 
 const MainPage = () => {
-
   useGate(MainPageGate)
 
   return (
     <main>
       <Hero />
       <Categories />
+      <NewGoods />
       <BestsellerGoods />
     </main>
   )

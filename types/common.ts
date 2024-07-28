@@ -12,6 +12,7 @@ export interface IProduct {
   inStock: string
   isNew: boolean
   isBestseller: boolean
+  vendorCode: string
   sizes: ISizes
   popularity: number
   errorMessage?: string
