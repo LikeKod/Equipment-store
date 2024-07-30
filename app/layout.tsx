@@ -1,4 +1,4 @@
-import Layout from '@/components/layouts/Layout'
+import PagesLayout from '@/components/layouts/PagesLayout'
 import type { Metadata } from 'next'
 
 import './globalStyles/cart-popup.css'
@@ -23,11 +23,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang='en'>
-      <body>
-        <Layout>{children}</Layout>
-      </body>
-    </html>
-  )
+  return <PagesLayout>{children}</PagesLayout>
 }

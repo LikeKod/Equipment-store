@@ -1,9 +1,11 @@
 import ProductAvailable from '@/components/elements/ProductAvaliable/ProductAvaliable'
 import ProductItemActionBtn from '@/components/elements/ProductItemActionBtn/ProductItemActionBtn'
 import ProductSubtitle from '@/components/elements/ProductSubtitle/ProductSubtitle'
+import { setCurrentProduct } from '@/context/goods'
+import { showQuickViewModal } from '@/context/modals'
 import { useLang } from '@/hooks/useLang'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import { formatPrice } from '@/lib/utils/common'
+import { addOverflowHiddenToBody, formatPrice } from '@/lib/utils/common'
 import Image from '@/node_modules/next/image'
 import Link from '@/node_modules/next/link'
 import { IProductListItemProps } from '@/types/modules'
@@ -15,6 +17,12 @@ const ProductListItem = ({ item, title }: IProductListItemProps) => {
   const { lang, translation } = useLang()
   const isTitleForNew = title === translation[lang].main_page.new_title
   const isMedia800 = useMediaQuery(800)
+
+  const handleShowQuickViewModal = () => {
+    addOverflowHiddenToBody()
+    showQuickViewModal()
+    setCurrentProduct(item)
+  }
 
   return (
     <>

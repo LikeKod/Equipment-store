@@ -3,7 +3,7 @@
 import { loadOneProductFx } from '@/api/goods'
 import { getBestsellerProductsFx, getNewProductsFx } from '@/api/main-page'
 import { createGate, Gate } from '@/node_modules/effector-react/index'
-import { createDomain, Effect, forward, sample } from '@/node_modules/effector/index'
+import { createDomain, Effect, sample } from '@/node_modules/effector/index'
 import { IProduct } from '@/types/common'
 import { ILoadOneProductFx } from '@/types/goods'
 
@@ -42,7 +42,7 @@ export const $currentProduct = goods
   .on(setCurrentProduct, (_, product) => product)
   .on(loadOneProductFx.done, (_, {result}) => result.productItem)
 
-forward({
-  from: loadOneProduct,
+sample({
+  clock: loadOneProduct,
   to: loadOneProductFx
 })

@@ -1,6 +1,5 @@
 import QuickViewModalSliderArrow from '@/components/elements/QuickViewModalSliderArrow/QuickViewModalSliderArrow'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import Image from '@/node_modules/next/image'
 import styles from '@/styles/quick-view-modal/index.module.scss'
 import Slider from 'react-slick'
 
@@ -41,7 +40,7 @@ const QuickViewModalSlider = ({
           style={{ width: isMedia890 ? 270 : isMedia1070 ? 350 : 480 }}
           className={styles.modal__left__slider__slide}
         >
-          <Image src={item.src} fill objectFit='contain' alt={item.alt} />
+          <img src={item.src} alt={item.alt} />
         </div>
       ))}
     </Slider>

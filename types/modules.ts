@@ -32,3 +32,8 @@ export interface IProductLabelProps {
   isNew: boolean
   isBestseller: boolean
 }
+
+export interface IProductInfoLabelProps {
+  color: string
+  className?: string
+}
