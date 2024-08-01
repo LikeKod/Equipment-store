@@ -8,12 +8,13 @@ import { formatPrice, removeOverflowHiddenFromBody } from '@/lib/utils/common'
 import styles from '@/styles/quick-view-modal/index.module.scss'
 import ProductColor from '../ProductListItem/ProductColor'
 import ProductComposition from '../ProductListItem/ProductComposition'
+import ProductSizesItem from '../ProductListItem/ProductSizesItem'
 import ProductSizeTableBtn from '../ProductListItem/ProductSizeTableBtn'
 import QuickViewModalSlider from './QuickViewModalSlider'
 
 const QuickViewModal = () => {
   const { lang, translation } = useLang()
-  const { product } = useCartAction()
+  const { product, selectedSize, setSelectedSize } = useCartAction()
   const images = useProductImages(product)
   const {
     handleAddToComparison,
@@ -108,7 +109,7 @@ const QuickViewModal = () => {
                     currentSize={[key, value]}
                     selectedSize={selectedSize}
                     setSelectedSize={setSelectedSize}
-                    currentCartItems={currentCartItems}
+                    currentCartItems={[]}
                   />
                 ))}
               </ul>

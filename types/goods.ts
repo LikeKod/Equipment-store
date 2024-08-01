@@ -11,3 +11,13 @@ export interface IProductSizesItemProps {
   setSelectedSize: (arg0: string) => void
   currentCartItems: ICartItem[]
 }
+
+export interface IProductCounterProps {
+  className: string
+  count: number
+}
+
+export interface IAddToCartBtnProps {
+  text: string
+  className?: string
+}

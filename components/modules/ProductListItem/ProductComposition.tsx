@@ -8,6 +8,7 @@ const ProductComposition = ({composition}: {composition: string}) => {
 
     return (
         <span className={styles.product__composition}>
+            {translation[lang].product.composition}:{' '}
             {translation[lang].catalog[composition]}
         </span>
     )

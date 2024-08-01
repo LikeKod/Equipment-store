@@ -1,12 +1,12 @@
 'use client'
 import styles from '@/styles/quick-view-modal/index.module.scss'
 import { IProductSizesItemProps } from '@/types/goods'
+import ProductCountBySize from './ProductCountBySize'
 
 const ProductSizesItem = ({
   currentSize,
   selectedSize,
   setSelectedSize,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   currentCartItems,
 }: IProductSizesItemProps) => {
   const handleSelectSize = () => setSelectedSize(currentSize[0])
