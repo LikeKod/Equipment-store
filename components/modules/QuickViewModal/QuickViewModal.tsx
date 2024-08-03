@@ -11,6 +11,8 @@ import ProductComposition from '../ProductListItem/ProductComposition'
 import ProductSizesItem from '../ProductListItem/ProductSizesItem'
 import ProductSizeTableBtn from '../ProductListItem/ProductSizeTableBtn'
 import QuickViewModalSlider from './QuickViewModalSlider'
+import AddToCartBtn from '../ProductListItem/AddToCartBtn'
+import ProductCounter from '../ProductListItem/ProductCounter'
 
 const QuickViewModal = () => {
   const { lang, translation } = useLang()
@@ -117,9 +119,34 @@ const QuickViewModal = () => {
           ) : (
             ''
           )}
+          <div className={styles.modal__right__bottom}>
+            <span className={stylesForProduct.product__count_title}>
+              {translation[lang].product.count}
+            </span>
+            <div className={styles.modal__right__bottom__inner}>
+              {!!selectedSize ? (
+                <ProductCounter
+                  className={`counter ${styles.modal__right__bottom__counter}`}
+                />
+              ) : (
+                <div
+                  className={`counter ${styles.modal__right__bottom__counter}`}
+                  style={{ justifyContent: 'center' }}
+                >
+                  <span>
+                    {translation[lang].product.total_in_cart}{' '}
+                  </span>
+                </div>
+              )}
+              <AddToCartBtn
+                className={styles.modal__right__bottom__add}
+                text={translation[lang].product.to_cart}
+              />
+            </div>
+          </div>
+          </div>
         </div>
       </div>
-    </div>
   )
 }
 
